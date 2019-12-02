@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   const [userInfo, setUserInfo] = useState("");
-  const [userChallenges, setUserChallenges] = useState("");
   const [challengeInfo, setChallengeInfo] = useState("");
 
   useEffect(() => {
@@ -15,8 +14,11 @@ function App() {
 
   const corsAnywhere = "https://cors-anywhere.herokuapp.com/";
 
-  // This function gets all of the information on a user:
+  // This function gets all of the information on a user, and
+  // returns all of the challenges they've completed:
+
   function getUser(e, user) {
+    
     user = userInfo;
     axios
       .get(corsAnywhere + "https://www.codewars.com/api/v1/users/" + user)
@@ -27,38 +29,31 @@ function App() {
       .catch(err => {
         console.log(err);
       });
-    console.log("User we are searching for (INFO): ", userInfo);
-    e.preventDefault();
-  }
+    console.log("Searching for ", userInfo);
 
-  // This function returns an array of all the challenges
-  // that a user has completed
-
-  function getCompleted(e, user) {
-    user = userChallenges;
     axios
-      .get(
-        corsAnywhere +
-          "https://www.codewars.com/api/v1/users/" +
-          user +
-          "/code-challenges/completed?page=0"
-      )
-      .then(data => {
-        console.log(`Here are the challenges that ${user} has completed:`);
-        console.log(data.data.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    console.log("User we are searching for (CHALLENGES): ", userChallenges);
+    .get(
+      corsAnywhere +
+        "https://www.codewars.com/api/v1/users/" +
+        user +
+        "/code-challenges/completed?page=0"
+    )
+    .then(data => {
+      console.log(`Here are the challenges that ${user} has completed:`);
+      console.log(data.data.data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
     e.preventDefault();
   }
 
   // Skipping authored challenges because very few students
   // have created challenges of their own
 
-  // Gives information on a codewars kata. Can accept either a
-  // title formatted-like-this or an ID
+  // This function gives information on a codewars kata. 
+  // It can accept either a title formatted-like-this or an ID:
 
   function getChallenge(e, challenge) {
     challenge = challengeInfo;
@@ -83,10 +78,6 @@ function App() {
     setUserInfo(e.target.value);
   }
 
-  function handleChangeUserChallenges(e) {
-    setUserChallenges(e.target.value);
-  }
-
   function handleChangeChallenge(e) {
     setChallengeInfo(e.target.value);
   }
@@ -104,24 +95,6 @@ function App() {
               type="submit"
               value="Submit"
               onClick={e => getUser(e, { userInfo })}
-            />
-          </form>
-        </li>
-
-        <li>
-          <form onSubmit={getCompleted}>
-            <label>
-              Enter a user to show their completed challenges:
-              <input
-                type="text"
-                value={userChallenges}
-                onChange={handleChangeUserChallenges}
-              />
-            </label>
-            <input
-              type="submit"
-              value="Submit"
-              onClick={e => getCompleted(e, { userChallenges })}
             />
           </form>
         </li>
