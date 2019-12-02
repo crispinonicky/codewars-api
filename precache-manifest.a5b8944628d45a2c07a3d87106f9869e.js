@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4ea065060447a2b6baf2cfed9e36e1b2",
+    "revision": "cb135632479bc82465c2f0ad95f69e8c",
     "url": "/codewars-api/index.html"
   },
   {
-    "revision": "b288235ead98d5148a95",
+    "revision": "e80e14a73a5b1fb32117",
     "url": "/codewars-api/static/css/main.81366e74.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/codewars-api/static/js/2.46f48d7c.chunk.js"
   },
   {
-    "revision": "b288235ead98d5148a95",
-    "url": "/codewars-api/static/js/main.c831ee1e.chunk.js"
+    "revision": "e80e14a73a5b1fb32117",
+    "url": "/codewars-api/static/js/main.12d1688b.chunk.js"
   },
   {
     "revision": "682f197f8a2f532a89b9",
