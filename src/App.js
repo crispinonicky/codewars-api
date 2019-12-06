@@ -23,10 +23,11 @@ function App() {
     axios
       .get(corsAnywhere + "https://www.codewars.com/api/v1/users/" + user)
       .then(data => {
-        console.log(`This is the information on ${userInfo}`);
+        console.log(`This is the information on ${userInfo}:`);
         console.log(data.data);
       })
       .catch(err => {
+        // console.log("User not found!")
         console.log(err);
       });
     console.log("Searching for ", userInfo);
@@ -43,6 +44,7 @@ function App() {
       console.log(data.data.data);
     })
     .catch(err => {
+      console.log("User not found!")
       console.log(err);
     });
 
