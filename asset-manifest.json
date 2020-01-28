@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/codewars-api/static/css/main.81366e74.chunk.css",
-    "main.js": "/codewars-api/static/js/main.12d1688b.chunk.js",
-    "main.js.map": "/codewars-api/static/js/main.12d1688b.chunk.js.map",
+    "main.css": "/codewars-api/static/css/main.13ee17dd.chunk.css",
+    "main.js": "/codewars-api/static/js/main.7673ea12.chunk.js",
+    "main.js.map": "/codewars-api/static/js/main.7673ea12.chunk.js.map",
     "runtime-main.js": "/codewars-api/static/js/runtime-main.14561675.js",
     "runtime-main.js.map": "/codewars-api/static/js/runtime-main.14561675.js.map",
-    "static/js/2.46f48d7c.chunk.js": "/codewars-api/static/js/2.46f48d7c.chunk.js",
-    "static/js/2.46f48d7c.chunk.js.map": "/codewars-api/static/js/2.46f48d7c.chunk.js.map",
+    "static/js/2.8e41b423.chunk.js": "/codewars-api/static/js/2.8e41b423.chunk.js",
+    "static/js/2.8e41b423.chunk.js.map": "/codewars-api/static/js/2.8e41b423.chunk.js.map",
     "index.html": "/codewars-api/index.html",
-    "precache-manifest.a5b8944628d45a2c07a3d87106f9869e.js": "/codewars-api/precache-manifest.a5b8944628d45a2c07a3d87106f9869e.js",
+    "precache-manifest.06cc8bce743de41315ebdf2c493d8e09.js": "/codewars-api/precache-manifest.06cc8bce743de41315ebdf2c493d8e09.js",
     "service-worker.js": "/codewars-api/service-worker.js",
-    "static/css/main.81366e74.chunk.css.map": "/codewars-api/static/css/main.81366e74.chunk.css.map"
+    "static/css/main.13ee17dd.chunk.css.map": "/codewars-api/static/css/main.13ee17dd.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.14561675.js",
-    "static/js/2.46f48d7c.chunk.js",
-    "static/css/main.81366e74.chunk.css",
-    "static/js/main.12d1688b.chunk.js"
+    "static/js/2.8e41b423.chunk.js",
+    "static/css/main.13ee17dd.chunk.css",
+    "static/js/main.7673ea12.chunk.js"
   ]
 }
