@@ -3,11 +3,13 @@ import axios from 'axios';
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [userInfo, setUserInfo] = useState("");
+  const [username, setUserInfo] = useState("");
+  const [userData, setUserData] = useState("");
+  const [userSearch, setUserSearch] = useState(false);
   const [challengeInfo, setChallengeInfo] = useState("");
 
   useEffect(() => {
-    // console.log("User we are searching for (INFO): ", userInfo);
+    // console.log("User we are searching for (INFO): ", username);
     // console.log("User we are searching for (CHALLENGES): ", userChallenges);
     // console.log("Challenge we are searching for: ", challengeInfo);
   });
@@ -19,18 +21,20 @@ function App() {
 
   function getUser(e, user) {
     
-    user = userInfo;
+    user = username;
     axios
       .get(corsAnywhere + "https://www.codewars.com/api/v1/users/" + user)
       .then(data => {
-        console.log(`This is the information on ${userInfo}:`);
+        console.log(`This is the information on ${username}:`);
         console.log(data.data);
+        setUserSearch(true)
+        setUserData(data.data)
       })
       .catch(err => {
         // console.log("User not found!")
         console.log(err);
       });
-    console.log("Searching for ", userInfo);
+    console.log("Searching for ", username);
 
     axios
     .get(
@@ -84,22 +88,42 @@ function App() {
     setChallengeInfo(e.target.value);
   }
 
+  function showUserDetails() {
+    if (userSearch === true) {
+      return(
+      <ul className = "userDetails">
+      <li>
+        Username: {userData.username}
+      </li>
+      <li>
+        Honor: {userData.honor}
+      </li>
+      <li>
+        Leaderboard Position: #{userData.leaderboardPosition}
+      </li>
+    </ul>
+      )
+    }
+  }
+
   return (
     <div className="App">
-      <ul>
-        <li>
+      <ul className = "theForms">
+        <li className = "userForm">
           <form onSubmit={getUser}>
             <label>
               Enter a user to show their info:
-              <input type="text" value={userInfo} onChange={handleChangeUser} />
+              <input type="text" value={username} onChange={handleChangeUser} />
             </label>
             <input
               type="submit"
               value="Submit"
-              onClick={e => getUser(e, { userInfo })}
+              onClick={e => getUser(e, { username })}
             />
           </form>
+          {showUserDetails()}
         </li>
+
 
         <li>
           <form onSubmit={getChallenge}>

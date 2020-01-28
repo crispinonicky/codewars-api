@@ -27,3 +27,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.theForms {
+  display: flex;
+  flex-direction: column;
+  /* width: 22vw; */
+}
+
+.theForms > li {
+  margin-bottom: 40vh;
+}
+
+.userDetails {
+  list-style: none;
+}
+
+.userForm {
+  display: flex;
+}
